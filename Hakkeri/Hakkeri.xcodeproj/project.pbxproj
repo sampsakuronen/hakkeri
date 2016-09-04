@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E414F1CA01210AA64DF332A /* Pods_Hakkeri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */; };
+		90753D3B1D7C542A00DF7670 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90753D3A1D7C542A00DF7670 /* StoryTableViewCell.swift */; };
 		90DE3FD61D7C493900A988F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE3FD51D7C493900A988F6 /* AppDelegate.swift */; };
 		90DE3FDB1D7C493900A988F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DE3FD91D7C493900A988F6 /* Main.storyboard */; };
 		90DE3FDD1D7C493900A988F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90DE3FDC1D7C493900A988F6 /* Assets.xcassets */; };
@@ -15,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hakkeri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B851EB2C09D68F79A5E68ED /* Pods-Hakkeri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.release.xcconfig"; sourceTree = "<group>"; };
+		90753D3A1D7C542A00DF7670 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 		90DE3FD21D7C493900A988F6 /* Hakkeri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hakkeri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90DE3FD51D7C493900A988F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90DE3FDA1D7C493900A988F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		90DE3FDF1D7C493900A988F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90DE3FE11D7C493900A988F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90DE3FE71D7C4A5400A988F6 /* FrontPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontPageTableViewController.swift; sourceTree = "<group>"; };
+		FE2B5232A052BE693B545A93 /* Pods-Hakkeri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E414F1CA01210AA64DF332A /* Pods_Hakkeri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33602654EE83C15C04D2C40F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B5232A052BE693B545A93 /* Pods-Hakkeri.debug.xcconfig */,
+				7B851EB2C09D68F79A5E68ED /* Pods-Hakkeri.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8E7C7E3C6BF2BF8AED7190FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		90DE3FC91D7C493900A988F6 = {
 			isa = PBXGroup;
 			children = (
 				90DE3FD41D7C493900A988F6 /* Hakkeri */,
 				90DE3FD31D7C493900A988F6 /* Products */,
+				33602654EE83C15C04D2C40F /* Pods */,
+				8E7C7E3C6BF2BF8AED7190FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +83,7 @@
 				90DE3FD51D7C493900A988F6 /* AppDelegate.swift */,
 				90DE3FE71D7C4A5400A988F6 /* FrontPageTableViewController.swift */,
 				90DE3FD91D7C493900A988F6 /* Main.storyboard */,
+				90753D3A1D7C542A00DF7670 /* StoryTableViewCell.swift */,
 				90DE3FDC1D7C493900A988F6 /* Assets.xcassets */,
 				90DE3FDE1D7C493900A988F6 /* LaunchScreen.storyboard */,
 				90DE3FE11D7C493900A988F6 /* Info.plist */,
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90DE3FE41D7C493900A988F6 /* Build configuration list for PBXNativeTarget "Hakkeri" */;
 			buildPhases = (
+				F85F86F90092EC1EBDEA254C /* [CP] Check Pods Manifest.lock */,
 				90DE3FCE1D7C493900A988F6 /* Sources */,
 				90DE3FCF1D7C493900A988F6 /* Frameworks */,
 				90DE3FD01D7C493900A988F6 /* Resources */,
+				0BC266E830B38D167C9E0EA4 /* [CP] Embed Pods Frameworks */,
+				C3236404B20C871E89388B9E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +126,7 @@
 				TargetAttributes = {
 					90DE3FD11D7C493900A988F6 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +162,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BC266E830B38D167C9E0EA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3236404B20C871E89388B9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F85F86F90092EC1EBDEA254C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		90DE3FCE1D7C493900A988F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +217,7 @@
 			files = (
 				90DE3FE81D7C4A5400A988F6 /* FrontPageTableViewController.swift in Sources */,
 				90DE3FD61D7C493900A988F6 /* AppDelegate.swift in Sources */,
+				90753D3B1D7C542A00DF7670 /* StoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +338,7 @@
 		};
 		90DE3FE51D7C493900A988F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE2B5232A052BE693B545A93 /* Pods-Hakkeri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hakkeri/Info.plist;
@@ -270,6 +351,7 @@
 		};
 		90DE3FE61D7C493900A988F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B851EB2C09D68F79A5E68ED /* Pods-Hakkeri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hakkeri/Info.plist;
@@ -299,6 +381,7 @@
 				90DE3FE61D7C493900A988F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
