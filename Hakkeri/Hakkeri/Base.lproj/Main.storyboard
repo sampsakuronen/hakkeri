@@ -10,7 +10,7 @@
         <scene sceneID="9Uy-ya-3Kc">
             <objects>
                 <tableViewController title="Front page" id="E0R-6J-xc3" customClass="FrontPageTableViewController" customModule="Hakkeri" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="N5Q-YM-GVf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="N5Q-YM-GVf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -18,22 +18,22 @@
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" id="kQH-pc-deF" customClass="StoryTableViewCell" customModule="Hakkeri" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kQH-pc-deF" id="3Gq-vo-4sC">
-                                    <frame key="frameInset" width="375" height="120"/>
+                                    <frame key="frameInset" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-na-lIx">
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-08-vrd">
                                                     <frame key="frameInset" minY="73" width="345" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-NX-Ngx">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -44,14 +44,14 @@
                                                 <constraint firstAttribute="trailing" secondItem="zf1-08-vrd" secondAttribute="trailing" id="At9-3W-1RS"/>
                                                 <constraint firstItem="Qym-NX-Ngx" firstAttribute="leading" secondItem="bRJ-na-lIx" secondAttribute="leading" id="KIk-ne-waA"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qym-NX-Ngx" secondAttribute="trailing" id="XPD-4o-FV1"/>
-                                                <constraint firstAttribute="bottom" secondItem="Qym-NX-Ngx" secondAttribute="bottom" constant="10" id="mc9-dE-Ebq"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qym-NX-Ngx" secondAttribute="bottom" id="mc9-dE-Ebq"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bRJ-na-lIx" firstAttribute="top" secondItem="3Gq-vo-4sC" secondAttribute="top" constant="15" id="Rc6-zF-bAu"/>
+                                        <constraint firstItem="bRJ-na-lIx" firstAttribute="top" secondItem="3Gq-vo-4sC" secondAttribute="top" id="Rc6-zF-bAu"/>
                                         <constraint firstItem="bRJ-na-lIx" firstAttribute="leading" secondItem="3Gq-vo-4sC" secondAttribute="leading" constant="15" id="Ubk-0x-f3Y"/>
-                                        <constraint firstAttribute="bottom" secondItem="bRJ-na-lIx" secondAttribute="bottom" constant="15" id="syF-iu-Eqr"/>
+                                        <constraint firstAttribute="bottom" secondItem="bRJ-na-lIx" secondAttribute="bottom" constant="10" id="syF-iu-Eqr"/>
                                         <constraint firstAttribute="trailing" secondItem="bRJ-na-lIx" secondAttribute="trailing" constant="15" id="vi6-0g-JDr"/>
                                     </constraints>
                                 </tableViewCellContentView>
