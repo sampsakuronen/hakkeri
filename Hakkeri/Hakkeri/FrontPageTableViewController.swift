@@ -78,9 +78,11 @@ class FrontPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let storyCell = cell as? StoryTableViewCell
         
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .allowUserInteraction, animations: {
             storyCell?.mainView.alpha = 1.0
-        })
+            }) { (true) in
+                
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
