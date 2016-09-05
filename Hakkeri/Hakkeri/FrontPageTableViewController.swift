@@ -72,23 +72,42 @@ class FrontPageTableViewController: UITableViewController {
             }
         }
         
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.05)
+        cell.selectedBackgroundView = bgColorView
         return cell
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let storyCell = cell as? StoryTableViewCell
-        
-        UIView.animate(withDuration: 0.3, delay: 0, options: .allowUserInteraction, animations: {
-            storyCell?.mainView.alpha = 1.0
-            }) { (true) in
-                
+        if let storyCell = cell as? StoryTableViewCell {
+            storyCell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+            UIView.animate(withDuration: 0.4, animations: {
+                storyCell.mainView.alpha = 1.0
+                storyCell.layer.transform = CATransform3DMakeScale(1.05, 1.05, 1)
+                },completion: { finished in
+                    UIView.animate(withDuration: 0.1, animations: {
+                        storyCell.mainView.alpha = 1.0
+                        storyCell.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                    })
+            })
         }
+        
+       
+//        UIView.animate(withDuration: 1, delay: 0, options: .allowUserInteraction, animations: {
+//            storyCell?.mainView.alpha = 1.0
+//        }) { (true) in
+//            
+//        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
         let svc = SFSafariViewController(url: cell.url!, entersReaderIfAvailable: true)
         self.present(svc, animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 
 }
