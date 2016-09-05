@@ -30,8 +30,7 @@ class FrontPageTableViewController: UITableViewController {
                 }
         }
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,8 +45,21 @@ class FrontPageTableViewController: UITableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for cell in tableView.visibleCells as! [StoryTableViewCell] {
             let point = tableView.convert(cell.center, to: tableView.superview)
-            cell.alpha = ((point.y * 100) / tableView.bounds.maxY) / 10
+            cell.alpha = ((point.y * 100) / tableView.bounds.height) / 7
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
+        
+        let share = UITableViewRowAction(style: .normal, title: "Share") { (action, index) in
+            let activityViewController = UIActivityViewController(activityItems: ["\(cell.url!.absoluteString) from Hacker News via Hakkeri"], applicationActivities: nil)
+            self.present(activityViewController, animated: true, completion: {})
+        }
+        
+        share.backgroundColor = UIColor.darkGray
+        
+        return [share]
     }
     
     // MARK: - Table view data source
@@ -93,7 +105,7 @@ class FrontPageTableViewController: UITableViewController {
             storyCell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
             UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
                 storyCell.mainView.alpha = 1.0
-                storyCell.layer.transform = CATransform3DMakeScale(1.05, 1.05, 1)
+                storyCell.layer.transform = CATransform3DMakeScale(1.02, 1.02, 1)
                 },completion: { finished in
                     UIView.animate(withDuration: 0.1, animations: {
                         storyCell.mainView.alpha = 1.0
