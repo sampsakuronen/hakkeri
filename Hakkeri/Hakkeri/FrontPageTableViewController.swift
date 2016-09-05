@@ -20,17 +20,6 @@ class FrontPageTableViewController: UITableViewController {
         line.backgroundColor = self.tableView.separatorColor
         
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setStatusBarStyle()
-        getTopStories()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func getTopStories() {
         Alamofire.request("https://hacker-news.firebaseio.com/v0/topstories.json", withMethod: .get)
@@ -41,19 +30,32 @@ class FrontPageTableViewController: UITableViewController {
                 }
         }
     }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setStatusBarStyle()
+        getTopStories()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for cell in tableView.visibleCells as! [StoryTableViewCell] {
             let point = tableView.convert(cell.center, to: tableView.superview)
             cell.alpha = ((point.y * 100) / tableView.bounds.maxY) / 10
         }
     }
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return topStories.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as! StoryTableViewCell
         
@@ -82,6 +84,7 @@ class FrontPageTableViewController: UITableViewController {
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.05)
         cell.selectedBackgroundView = bgColorView
+        
         return cell
     }
     
@@ -98,13 +101,6 @@ class FrontPageTableViewController: UITableViewController {
                     })
             })
         }
-        
-       
-//        UIView.animate(withDuration: 1, delay: 0, options: .allowUserInteraction, animations: {
-//            storyCell?.mainView.alpha = 1.0
-//        }) { (true) in
-//            
-//        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -116,5 +112,5 @@ class FrontPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
+    
 }
