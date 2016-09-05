@@ -1,6 +1,7 @@
 import UIKit
 import SafariServices
 import Alamofire
+import QuartzCore
 
 
 class FrontPageTableViewController: UITableViewController {
@@ -38,6 +39,12 @@ class FrontPageTableViewController: UITableViewController {
                     self.topStories = topIds
                     self.tableView.reloadData()
                 }
+        }
+    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        for cell in tableView.visibleCells as! [StoryTableViewCell] {
+            let point = tableView.convert(cell.center, to: tableView.superview)
+            cell.alpha = ((point.y * 100) / tableView.bounds.maxY) / 10
         }
     }
 
@@ -81,7 +88,7 @@ class FrontPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let storyCell = cell as? StoryTableViewCell {
             storyCell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
-            UIView.animate(withDuration: 0.4, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
                 storyCell.mainView.alpha = 1.0
                 storyCell.layer.transform = CATransform3DMakeScale(1.05, 1.05, 1)
                 },completion: { finished in
