@@ -44,24 +44,32 @@ class FrontPageTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return topStories.count >= 100 ? 100 : topStories.count
+        return topStories.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as! StoryTableViewCell
-        Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json", withMethod: .get)
-            .responseJSON { response in
-                if let story = response.result.value as? NSDictionary {
-                    
-                    let url = URL(string: story.object(forKey: "url")! as! String)
-                    let domain = url?.host
-                    
-                    cell.titleLabel.text = story.object(forKey: "title")! as? String
-                    cell.domainLabel.text = domain
-                    cell.url = url
-                    
-                    self.tableView.layoutSubviews()
-                }
+        
+        if cell.url == nil {
+            Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json", withMethod: .get)
+                .responseJSON { response in
+                    if let story = response.result.value as? NSDictionary {
+                        if let urlString = story.object(forKey: "url") {
+                            let url = URL(string: urlString as! String)
+                            let domain = url?.host
+                            cell.domainLabel.text = domain
+                            cell.url = url
+                        } else {
+                            let url =  URL(string: "https://news.ycombinator.com/item?id=\(story.object(forKey: "id")! as? String)")
+                            cell.domainLabel.text = "HN"
+                            cell.url = url
+                        }
+                        
+                        cell.titleLabel.text = story.object(forKey: "title")! as? String
+                        
+                        self.tableView.layoutSubviews()
+                    }
+            }
         }
         
         return cell
@@ -71,13 +79,6 @@ class FrontPageTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
         let svc = SFSafariViewController(url: cell.url!, entersReaderIfAvailable: true)
         self.present(svc, animated: true, completion: nil)
-    }
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
 
 }

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,38 +22,41 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kQH-pc-deF" id="3Gq-vo-4sC">
-                                    <frame key="frameInset" width="375" height="100"/>
+                                    <frame key="frameInset" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRJ-na-lIx">
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-08-vrd">
-                                                    <frame key="frameInset" minY="73" width="345" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-NX-Ngx">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-08-vrd">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="13" id="tk3-Si-Vnd"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-NX-Ngx">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="zf1-08-vrd" secondAttribute="bottom" id="272-z7-rgB"/>
-                                                <constraint firstItem="Qym-NX-Ngx" firstAttribute="top" secondItem="bRJ-na-lIx" secondAttribute="top" id="3GE-sL-0vi"/>
-                                                <constraint firstAttribute="trailing" secondItem="zf1-08-vrd" secondAttribute="trailing" id="At9-3W-1RS"/>
-                                                <constraint firstItem="Qym-NX-Ngx" firstAttribute="leading" secondItem="bRJ-na-lIx" secondAttribute="leading" id="KIk-ne-waA"/>
-                                                <constraint firstAttribute="trailing" secondItem="Qym-NX-Ngx" secondAttribute="trailing" id="XPD-4o-FV1"/>
-                                                <constraint firstAttribute="bottom" secondItem="Qym-NX-Ngx" secondAttribute="bottom" id="mc9-dE-Ebq"/>
+                                                <constraint firstItem="Qym-NX-Ngx" firstAttribute="top" secondItem="bRJ-na-lIx" secondAttribute="top" constant="10" id="ED9-CY-dBS"/>
+                                                <constraint firstAttribute="bottom" secondItem="zf1-08-vrd" secondAttribute="bottom" constant="10" id="VQA-fZ-xKK"/>
+                                                <constraint firstAttribute="trailing" secondItem="zf1-08-vrd" secondAttribute="trailing" id="Wqm-YU-b7z"/>
+                                                <constraint firstItem="zf1-08-vrd" firstAttribute="top" secondItem="Qym-NX-Ngx" secondAttribute="bottom" constant="5" id="dup-kt-9Bf"/>
+                                                <constraint firstItem="zf1-08-vrd" firstAttribute="leading" secondItem="bRJ-na-lIx" secondAttribute="leading" id="eY4-Qi-T0r"/>
+                                                <constraint firstItem="Qym-NX-Ngx" firstAttribute="leading" secondItem="bRJ-na-lIx" secondAttribute="leading" id="mph-xh-k3a"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qym-NX-Ngx" secondAttribute="trailing" id="wkz-Pk-wVS"/>
                                             </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bRJ-na-lIx" firstAttribute="top" secondItem="3Gq-vo-4sC" secondAttribute="top" id="Rc6-zF-bAu"/>
-                                        <constraint firstItem="bRJ-na-lIx" firstAttribute="leading" secondItem="3Gq-vo-4sC" secondAttribute="leading" constant="15" id="Ubk-0x-f3Y"/>
-                                        <constraint firstAttribute="bottom" secondItem="bRJ-na-lIx" secondAttribute="bottom" constant="10" id="syF-iu-Eqr"/>
-                                        <constraint firstAttribute="trailing" secondItem="bRJ-na-lIx" secondAttribute="trailing" constant="15" id="vi6-0g-JDr"/>
+                                        <constraint firstItem="bRJ-na-lIx" firstAttribute="leading" secondItem="3Gq-vo-4sC" secondAttribute="leadingMargin" constant="10" id="52V-1i-mNU"/>
+                                        <constraint firstItem="bRJ-na-lIx" firstAttribute="top" secondItem="3Gq-vo-4sC" secondAttribute="top" id="hOe-lW-cCl"/>
+                                        <constraint firstItem="bRJ-na-lIx" firstAttribute="centerX" secondItem="3Gq-vo-4sC" secondAttribute="centerX" id="rfb-dH-jrE"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bRJ-na-lIx" secondAttribute="bottom" id="vYM-v7-SA4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

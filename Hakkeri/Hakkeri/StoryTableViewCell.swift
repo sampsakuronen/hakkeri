@@ -5,7 +5,6 @@ class StoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var domainLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
     var url: URL? = nil
     
     override func awakeFromNib() {
@@ -19,6 +18,7 @@ class StoryTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         domainLabel.text = ""
         titleLabel.text = ""
+        url = nil
     }
 
 }
