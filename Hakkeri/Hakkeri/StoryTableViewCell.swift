@@ -3,6 +3,7 @@ import UIKit
 
 class StoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var domainLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     var url: URL? = nil
@@ -19,6 +20,7 @@ class StoryTableViewCell: UITableViewCell {
         domainLabel.text = ""
         titleLabel.text = ""
         url = nil
+        mainView.alpha = 0.0
     }
 
 }

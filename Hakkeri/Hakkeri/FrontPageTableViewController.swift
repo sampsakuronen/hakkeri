@@ -75,6 +75,14 @@ class FrontPageTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let storyCell = cell as? StoryTableViewCell
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            storyCell?.mainView.alpha = 1.0
+        })
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
         let svc = SFSafariViewController(url: cell.url!, entersReaderIfAvailable: true)
