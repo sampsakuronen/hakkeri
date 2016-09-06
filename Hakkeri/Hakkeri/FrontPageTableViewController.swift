@@ -49,6 +49,10 @@ class FrontPageTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
         
@@ -94,7 +98,7 @@ class FrontPageTableViewController: UITableViewController {
         }
         
         let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.05)
+        bgColorView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.03)
         cell.selectedBackgroundView = bgColorView
         
         return cell
@@ -105,7 +109,7 @@ class FrontPageTableViewController: UITableViewController {
             storyCell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
             UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
                 storyCell.mainView.alpha = 1.0
-                storyCell.layer.transform = CATransform3DMakeScale(1.02, 1.02, 1)
+                storyCell.layer.transform = CATransform3DMakeScale(1.01, 1.01, 1)
                 },completion: { finished in
                     UIView.animate(withDuration: 0.1, animations: {
                         storyCell.mainView.alpha = 1.0
@@ -117,12 +121,8 @@ class FrontPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
+        
         let svc = SFSafariViewController(url: cell.url!, entersReaderIfAvailable: true)
         self.present(svc, animated: true, completion: nil)
     }
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
 }
