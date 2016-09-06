@@ -118,9 +118,9 @@ class FrontPageTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
-        
-        let svc = SFSafariViewController(url: cell.url!, entersReaderIfAvailable: true)
-        self.present(svc, animated: true, completion: nil)
+        if let cell = tableView.cellForRow(at: indexPath) as? StoryTableViewCell, let url = cell.url {
+            let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            self.present(svc, animated: true, completion: nil)
+        }
     }
 }
