@@ -15,10 +15,6 @@ class StoryTableViewCell: UITableViewCell {
         bgColorView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.03)
         self.selectedBackgroundView = bgColorView
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     override func prepareForReuse() {
         domainLabel.text = ""
