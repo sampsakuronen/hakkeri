@@ -58,7 +58,9 @@ class FrontPageTableViewController: UITableViewController {
         
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, index) in
             let activityViewController = UIActivityViewController(activityItems: ["\(cell.url!.absoluteString) from Hacker News via Hakkeri"], applicationActivities: nil)
-            self.present(activityViewController, animated: true, completion: {})
+            self.present(activityViewController, animated: true, completion: {
+                self.tableView.setEditing(false, animated: true)
+            })
         }
         
         share.backgroundColor = UIColor.darkGray
@@ -85,9 +87,9 @@ class FrontPageTableViewController: UITableViewController {
                             cell.domainLabel.text = domain
                             cell.url = url
                         } else {
-                            let url =  URL(string: "https://news.ycombinator.com/item?id=\(story.object(forKey: "id")! as? String)")
+                            let hnUrl =  URL(string: "https://news.ycombinator.com/item?id=\(story.object(forKey: "id")! as? String)")
                             cell.domainLabel.text = "HN"
-                            cell.url = url
+                            cell.url = hnUrl
                         }
                         
                         cell.titleLabel.text = story.object(forKey: "title")! as? String
