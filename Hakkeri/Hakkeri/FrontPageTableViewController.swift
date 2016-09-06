@@ -94,7 +94,8 @@ class FrontPageTableViewController: UITableViewController {
                         
                         cell.titleLabel.text = story.object(forKey: "title")! as? String
                         
-                        self.tableView.layoutSubviews()
+                        cell.setNeedsLayout()
+                        cell.layoutIfNeeded()
                     }
             }
         }
