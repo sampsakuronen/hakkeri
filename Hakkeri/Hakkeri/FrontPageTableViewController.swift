@@ -111,7 +111,6 @@ class FrontPageTableViewController: UITableViewController {
                 storyCell.layer.transform = CATransform3DMakeScale(1.01, 1.01, 1)
                 },completion: { finished in
                     UIView.animate(withDuration: 0.1, animations: {
-                        storyCell.mainView.alpha = 1.0
                         storyCell.layer.transform = CATransform3DMakeScale(1, 1, 1)
                     })
             })
