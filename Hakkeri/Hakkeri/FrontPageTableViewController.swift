@@ -123,4 +123,12 @@ class FrontPageTableViewController: UITableViewController {
             self.present(svc, animated: true, completion: nil)
         }
     }
+
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if let cell = tableView.cellForRow(at: indexPath) as? StoryTableViewCell, let _ = cell.url {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
 }
