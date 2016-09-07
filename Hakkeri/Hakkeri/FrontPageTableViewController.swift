@@ -36,6 +36,8 @@ class FrontPageTableViewController: UITableViewController {
         
         setStatusBarStyle()
         getTopStories()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(FrontPageTableViewController.getTopStories), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil )
     }
     
     override func didReceiveMemoryWarning() {
