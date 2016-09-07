@@ -87,7 +87,8 @@ class FrontPageTableViewController: UITableViewController {
                             cell.domainLabel.text = domain
                             cell.url = url
                         } else {
-                            let hnUrl =  URL(string: "https://news.ycombinator.com/item?id=\(story.object(forKey: "id")! as? String)")
+                            let id = String(story.object(forKey: "id") as! Int)
+                            let hnUrl =  URL(string: "https://news.ycombinator.com/item?id=\(id)")
                             cell.domainLabel.text = "HN"
                             cell.url = hnUrl
                         }
