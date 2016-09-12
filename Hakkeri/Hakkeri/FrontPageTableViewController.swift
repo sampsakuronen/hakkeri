@@ -22,7 +22,7 @@ class FrontPageTableViewController: UITableViewController {
     }
     
     func getTopStories() {
-        Alamofire.request("https://hacker-news.firebaseio.com/v0/topstories.json", withMethod: .get)
+        Alamofire.request("https://hacker-news.firebaseio.com/v0/topstories.json")
             .responseJSON { response in
                 if let topIds = response.result.value as? [Int] {
                     self.topStories = topIds
@@ -80,7 +80,7 @@ class FrontPageTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as! StoryTableViewCell
         
         if cell.url == nil {
-            Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json", withMethod: .get)
+            Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json")
                 .responseJSON { response in
                     if let story = response.result.value as? NSDictionary {
                         if let urlString = story.object(forKey: "url") {

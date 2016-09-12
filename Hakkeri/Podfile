@@ -3,7 +3,5 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'Hakkeri' do
-  pod 'Alamofire',
-  :git => 'https://github.com/Alamofire/Alamofire.git',
-  :branch => 'swift3'
+    pod 'Alamofire', '~> 4.0'
 end
