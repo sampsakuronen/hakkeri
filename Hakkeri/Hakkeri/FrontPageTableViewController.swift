@@ -3,7 +3,6 @@ import SafariServices
 import Alamofire
 import QuartzCore
 
-
 class FrontPageTableViewController: UITableViewController {
     var topStories = [Int]()
     
@@ -18,11 +17,11 @@ class FrontPageTableViewController: UITableViewController {
         let line: UIView = UIView(frame: frame)
         self.tableView.tableHeaderView = line
         line.backgroundColor = self.tableView.separatorColor
-        
     }
     
     func getTopStories() {
-        Alamofire.request("https://hacker-news.firebaseio.com/v0/topstories.json")
+        let TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
+        Alamofire.request(TOP_STORIES_URL)
             .responseJSON { response in
                 if let topIds = response.result.value as? [Int] {
                     self.topStories = topIds
@@ -47,10 +46,6 @@ class FrontPageTableViewController: UITableViewController {
         getTopStories()
         
         NotificationCenter.default.addObserver(self, selector: #selector(FrontPageTableViewController.getTopStories), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil )
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
