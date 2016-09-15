@@ -51,7 +51,7 @@ class FrontPageTableViewController: UITableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         for cell in tableView.visibleCells as! [StoryTableViewCell] {
             let point = tableView.convert(cell.center, to: tableView.superview)
-            cell.alpha = ((point.y * 100) / tableView.bounds.height) / 7
+            cell.alpha = ((point.y * 100) / tableView.bounds.height) / 10
         }
     }
     
