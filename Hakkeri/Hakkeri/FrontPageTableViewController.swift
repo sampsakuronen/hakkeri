@@ -75,8 +75,8 @@ class FrontPageTableViewController: UITableViewController {
             })
         }
         
-        share.backgroundColor = UIColor.darkGray
-        showThread.backgroundColor = UIColor.gray
+        share.backgroundColor = UIColor.gray
+        showThread.backgroundColor = UIColor.darkGray
         
         return [showThread, share]
     }
