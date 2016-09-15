@@ -121,7 +121,7 @@ class FrontPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let storyCell = cell as? StoryTableViewCell {
-            storyCell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+            storyCell.layer.transform = CATransform3DMakeScale(0.2, 0.2, 1)
             UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
                 storyCell.mainView.alpha = 1.0
                 storyCell.layer.transform = CATransform3DMakeScale(1.01, 1.01, 1)
