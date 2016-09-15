@@ -30,6 +30,15 @@ class FrontPageTableViewController: UITableViewController {
                 }
         }
     }
+    
+    func showInSafariReader(url: URL) {
+        let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        self.present(svc, animated: true, completion: nil)
+    }
+    
+    func getHackerNewsURL(id: String) -> String {
+        return "https://news.ycombinator.com/item?id=\(id)"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +67,12 @@ class FrontPageTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let cell = tableView.cellForRow(at: indexPath) as! StoryTableViewCell
         
+        let showThread = UITableViewRowAction(style: .normal, title: "Comments") { (action, index) in
+            if let urlString = cell.hackerNewsURL, let url = URL(string: urlString)  {
+                self.showInSafariReader(url: url)
+            }
+        }
+        
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, index) in
             let activityViewController = UIActivityViewController(activityItems: ["\(cell.url!.absoluteString) from Hacker News via Hakkeri"], applicationActivities: nil)
             self.present(activityViewController, animated: true, completion: {
@@ -66,8 +81,9 @@ class FrontPageTableViewController: UITableViewController {
         }
         
         share.backgroundColor = UIColor.darkGray
+        showThread.backgroundColor = UIColor.gray
         
-        return [share]
+        return [showThread, share]
     }
     
     // MARK: - Table view data source
@@ -90,11 +106,13 @@ class FrontPageTableViewController: UITableViewController {
                             cell.url = url
                         } else {
                             let id = String(story.object(forKey: "id") as! Int)
-                            let hnUrl =  URL(string: "https://news.ycombinator.com/item?id=\(id)")
+                            let hnUrl =  self.getHackerNewsURL(id: id)
                             cell.domainLabel.text = "HN"
-                            cell.url = hnUrl
+                            cell.url = URL(string: hnUrl)
                         }
                         
+                        let id = String(story.object(forKey: "id") as! Int)
+                        cell.hackerNewsURL = self.getHackerNewsURL(id: id)
                         cell.titleLabel.text = story.object(forKey: "title")! as? String
                         
                         cell.setNeedsLayout()
@@ -122,8 +140,7 @@ class FrontPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? StoryTableViewCell, let url = cell.url {
-            let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
-            self.present(svc, animated: true, completion: nil)
+            showInSafariReader(url: url)
         }
     }
 

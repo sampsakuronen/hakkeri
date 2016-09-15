@@ -8,6 +8,7 @@ class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     var url: URL? = nil
     var id: String? = nil
+    var hackerNewsURL: String? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +22,7 @@ class StoryTableViewCell: UITableViewCell {
         titleLabel.text = ""
         url = nil
         id = nil
+        hackerNewsURL = nil
         mainView.alpha = 0.0
     }
 
