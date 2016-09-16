@@ -1,5 +1,5 @@
-
 import UIKit
+import Alamofire
 
 class StoryTableViewCell: UITableViewCell {
 
@@ -9,6 +9,7 @@ class StoryTableViewCell: UITableViewCell {
     var url: URL? = nil
     var id: String? = nil
     var hackerNewsURL: String? = nil
+    var storyRequest: DataRequest? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,10 @@ class StoryTableViewCell: UITableViewCell {
         id = nil
         hackerNewsURL = nil
         mainView.alpha = 0.0
+        
+        if let request = storyRequest {
+            request.cancel()
+        }
     }
 
 }

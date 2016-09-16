@@ -91,7 +91,7 @@ class FrontPageTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as! StoryTableViewCell
         
         if cell.url == nil {
-            Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json")
+            let storyRequest = Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json")
                 .responseJSON { response in
                     if let story = response.result.value as? NSDictionary {
                         if let urlString = story.object(forKey: "url") {
@@ -114,6 +114,8 @@ class FrontPageTableViewController: UITableViewController {
                         cell.layoutIfNeeded()
                     }
             }
+            
+            cell.storyRequest = storyRequest
         }
         
         return cell
