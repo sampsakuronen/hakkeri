@@ -31,7 +31,10 @@ class FrontPageTableViewController: UITableViewController {
     }
     
     func showInSafariReader(url: URL) {
-        let svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+        let defaults = UserDefaults.standard
+        let dontUseReaderMode = defaults.bool(forKey: "dont_use_reader_mode")
+        
+        let svc = SFSafariViewController(url: url, entersReaderIfAvailable: !dontUseReaderMode)
         self.present(svc, animated: true, completion: nil)
     }
     
@@ -45,7 +48,7 @@ class FrontPageTableViewController: UITableViewController {
         setStatusBarStyle()
         getTopStories()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(FrontPageTableViewController.getTopStories), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil )
+        NotificationCenter.default.addObserver(self, selector: #selector(FrontPageTableViewController.getTopStories), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
