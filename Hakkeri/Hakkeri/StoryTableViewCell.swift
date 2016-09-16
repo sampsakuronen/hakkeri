@@ -28,6 +28,7 @@ class StoryTableViewCell: UITableViewCell {
         
         if let request = storyRequest {
             request.cancel()
+            storyRequest = nil
         }
     }
 
