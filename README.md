@@ -6,5 +6,5 @@ Hakkeri is a minimalist and readable client for Hacker News. It uses the [open H
 
 Cocoapods for dependencies:
 
-    sudo gem pod install
+    sudo gem install cocoapods
     pod install
