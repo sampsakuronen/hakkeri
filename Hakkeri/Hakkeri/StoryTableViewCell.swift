@@ -6,10 +6,14 @@ class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var domainLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var excerptLabel: UILabel!
+    
     var url: URL? = nil
     var id: String? = nil
     var hackerNewsURL: String? = nil
+    
     var storyRequest: DataRequest? = nil
+    var excerptRequest: DataRequest? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,11 +28,18 @@ class StoryTableViewCell: UITableViewCell {
         url = nil
         id = nil
         hackerNewsURL = nil
-        mainView.alpha = 0.0
         
-        if let request = storyRequest {
-            request.cancel()
+        mainView.alpha = 0.0
+        excerptLabel.alpha = 0.0
+        
+        if let storyReq = storyRequest {
+            storyReq.cancel()
             storyRequest = nil
+        }
+        
+        if let excerptReq = excerptRequest {
+            excerptReq.cancel()
+            excerptRequest = nil
         }
     }
 
