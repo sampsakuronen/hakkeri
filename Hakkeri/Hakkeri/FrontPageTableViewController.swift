@@ -30,7 +30,7 @@ class FrontPageTableViewController: UITableViewController {
         }
     }
     
-    func showInSafariReader(url: URL) {
+    func showInSafari(url: URL) {
         let defaults = UserDefaults.standard
         let dontUseReaderMode = defaults.bool(forKey: "dont_use_reader_mode")
         
@@ -67,7 +67,7 @@ class FrontPageTableViewController: UITableViewController {
         
         let showThread = UITableViewRowAction(style: .normal, title: "Comments") { (action, index) in
             if let urlString = cell.hackerNewsURL, let url = URL(string: urlString)  {
-                self.showInSafariReader(url: url)
+                self.showInSafari(url: url)
             }
         }
         
@@ -84,63 +84,67 @@ class FrontPageTableViewController: UITableViewController {
         return [showThread, share]
     }
     
-    // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return topStories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoryCell", for: indexPath) as! StoryTableViewCell
-        
-        if cell.url == nil {
-            let storyRequest = Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json")
-                .responseJSON { response in
-                    if let story = response.result.value as? NSDictionary {
-                        if let urlString = story.object(forKey: "url") {
-                            let url = URL(string: urlString as! String)
-                            let domain = url?.host
-                            cell.domainLabel.text = domain
-                            cell.url = url
-                        } else {
-                            let id = String(story.object(forKey: "id") as! Int)
-                            let hnUrl =  self.getHackerNewsURL(id: id)
-                            cell.domainLabel.text = "HN"
-                            cell.url = URL(string: hnUrl)
-                        }
-                        
+    
+        let storyRequest = Alamofire.request("https://hacker-news.firebaseio.com/v0/item/\(topStories[indexPath.row]).json")
+            .responseJSON { response in
+                if let story = response.result.value as? NSDictionary {
+                    if let urlString = story.object(forKey: "url") {
+                        let url = URL(string: urlString as! String)
+                        let domain = url?.host
+                        cell.domainLabel.text = domain
+                        cell.url = url
+                    } else {
                         let id = String(story.object(forKey: "id") as! Int)
-                        cell.hackerNewsURL = self.getHackerNewsURL(id: id)
-                        cell.titleLabel.text = story.object(forKey: "title")! as? String
-                        
-                        cell.setNeedsLayout()
-                        cell.layoutIfNeeded()
+                        let hnUrl =  self.getHackerNewsURL(id: id)
+                        cell.domainLabel.text = "HN"
+                        cell.url = URL(string: hnUrl)
                     }
-            }
-            
-            cell.storyRequest = storyRequest
+                    
+                    let id = String(story.object(forKey: "id") as! Int)
+                    cell.hackerNewsURL = self.getHackerNewsURL(id: id)
+                    cell.titleLabel.text = story.object(forKey: "title")! as? String
+                    
+                    cell.setNeedsLayout()
+                    cell.layoutIfNeeded()
+                }
         }
+        
+        cell.storyRequest = storyRequest
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let storyCell = cell as? StoryTableViewCell {
-            storyCell.layer.transform = CATransform3DMakeScale(0.2, 0.2, 1)
-            UIView.animate(withDuration: 0.4, delay: 0, options: .allowUserInteraction, animations: {
-                storyCell.mainView.alpha = 1.0
-                storyCell.layer.transform = CATransform3DMakeScale(1.01, 1.01, 1)
-                },completion: { finished in
-                    UIView.animate(withDuration: 0.1, animations: {
-                        storyCell.layer.transform = CATransform3DMakeScale(1, 1, 1)
-                    })
-            })
+            UIView.animate(
+                withDuration: 0.4,
+                delay: 0,
+                options: .allowUserInteraction,
+                animations: {
+                    storyCell.mainView.alpha = 1.0
+                    storyCell.layer.transform = CATransform3DMakeScale(1.01, 1.01, 1)
+                },
+                completion: { finished in
+                    UIView.animate(
+                        withDuration: 0.1,
+                        animations: {
+                            storyCell.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                        }
+                    )
+                }
+            )
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? StoryTableViewCell, let url = cell.url {
-            showInSafariReader(url: url)
+            showInSafari(url: url)
         }
     }
 
