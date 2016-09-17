@@ -110,6 +110,29 @@ class FrontPageTableViewController: UITableViewController {
                     cell.hackerNewsURL = self.getHackerNewsURL(id: id)
                     cell.titleLabel.text = story.object(forKey: "title")! as? String
                     
+                    let headers: HTTPHeaders = [
+                        "X-AYLIEN-TextAPI-Application-Key": "eb776c25e585e60d6a4175084ba984cb",
+                        "X-AYLIEN-TextAPI-Application-ID": "9613e27b"
+                    ]
+                    let parameters: Parameters = [
+                        "best_image": "true",
+                        "url": cell.url!.absoluteString
+                    ]
+                    let excerptRequest = Alamofire.request("https://api.aylien.com/api/v1/extract", method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+                        .responseJSON { readabilityResponse in
+                            if let readabilityResponse = readabilityResponse.result.value as? NSDictionary, let excerpt = readabilityResponse.object(forKey: "article") {
+                                UIView.animate(withDuration: 0.2, animations: {
+                                    cell.excerptLabel.text = excerpt as? String
+                                    cell.excerptLabel.alpha = 1.0
+                                    
+                                    cell.setNeedsLayout()
+                                    cell.layoutIfNeeded()
+                                })
+                            }
+                    }
+                    
+                    cell.excerptRequest = excerptRequest
+                    
                     cell.setNeedsLayout()
                     cell.layoutIfNeeded()
                 }
