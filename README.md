@@ -8,3 +8,5 @@ Cocoapods for dependencies:
 
     sudo gem install cocoapods
     pod install
+
+Configure Firebase by getting a Google settings `.plist`.

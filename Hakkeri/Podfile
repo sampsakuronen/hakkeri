@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'Hakkeri' do
     pod 'Alamofire', '~> 4.0'
+    pod 'Firebase/Core'
 end

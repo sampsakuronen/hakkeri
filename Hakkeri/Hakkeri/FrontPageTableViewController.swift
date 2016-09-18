@@ -2,6 +2,7 @@ import UIKit
 import SafariServices
 import Alamofire
 import QuartzCore
+import Firebase
 
 class FrontPageTableViewController: UITableViewController {
     var topStories = [Int]()
@@ -35,6 +36,12 @@ class FrontPageTableViewController: UITableViewController {
         let dontUseReaderMode = defaults.bool(forKey: "dont_use_reader_mode")
         
         let svc = SFSafariViewController(url: url, entersReaderIfAvailable: !dontUseReaderMode)
+        
+        FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+            "url": NSString(string: url.absoluteString),
+            "dontUseReaderMode": dontUseReaderMode as NSObject
+        ])
+        
         self.present(svc, animated: true, completion: nil)
     }
     
@@ -49,6 +56,8 @@ class FrontPageTableViewController: UITableViewController {
         getTopStories()
         
         NotificationCenter.default.addObserver(self, selector: #selector(FrontPageTableViewController.getTopStories), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        
+        FIRAnalytics.logEvent(withName: kFIREventViewItemList, parameters: nil)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -74,6 +83,9 @@ class FrontPageTableViewController: UITableViewController {
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, index) in
             let activityViewController = UIActivityViewController(activityItems: ["\(cell.url!.absoluteString) from Hacker News via Hakkeri"], applicationActivities: nil)
             self.present(activityViewController, animated: true, completion: {
+                FIRAnalytics.logEvent(withName: kFIREventShare, parameters: [
+                    "url": NSString(string: cell.url!.absoluteString)
+                ])
                 self.tableView.setEditing(false, animated: true)
             })
         }
@@ -109,6 +121,10 @@ class FrontPageTableViewController: UITableViewController {
                     let id = String(story.object(forKey: "id") as! Int)
                     cell.hackerNewsURL = self.getHackerNewsURL(id: id)
                     cell.titleLabel.text = story.object(forKey: "title")! as? String
+                    
+                    FIRAnalytics.logEvent(withName: kFIREventViewItem, parameters: [
+                        "url": NSString(string: cell.url!.absoluteString)
+                    ])
                     
                     cell.setNeedsLayout()
                     cell.layoutIfNeeded()

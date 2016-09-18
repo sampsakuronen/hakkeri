@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E414F1CA01210AA64DF332A /* Pods_Hakkeri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */; };
 		90753D3B1D7C542A00DF7670 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90753D3A1D7C542A00DF7670 /* StoryTableViewCell.swift */; };
+		90C2BD061D8E8C4900F4CD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90C2BD051D8E8C4900F4CD37 /* GoogleService-Info.plist */; };
 		90C9598E1D8C921200109432 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90C9598D1D8C921200109432 /* Settings.bundle */; };
 		90DE3FD61D7C493900A988F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE3FD51D7C493900A988F6 /* AppDelegate.swift */; };
 		90DE3FDB1D7C493900A988F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DE3FD91D7C493900A988F6 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hakkeri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B851EB2C09D68F79A5E68ED /* Pods-Hakkeri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.release.xcconfig"; sourceTree = "<group>"; };
 		90753D3A1D7C542A00DF7670 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
+		90C2BD051D8E8C4900F4CD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		90C9598D1D8C921200109432 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		90DE3FD21D7C493900A988F6 /* Hakkeri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hakkeri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90DE3FD51D7C493900A988F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				90DE3FD51D7C493900A988F6 /* AppDelegate.swift */,
 				90DE3FE71D7C4A5400A988F6 /* FrontPageTableViewController.swift */,
 				90DE3FD91D7C493900A988F6 /* Main.storyboard */,
+				90C2BD051D8E8C4900F4CD37 /* GoogleService-Info.plist */,
 				90753D3A1D7C542A00DF7670 /* StoryTableViewCell.swift */,
 				90DE3FDC1D7C493900A988F6 /* Assets.xcassets */,
 				90DE3FDE1D7C493900A988F6 /* LaunchScreen.storyboard */,
@@ -160,6 +163,7 @@
 			files = (
 				90C9598E1D8C921200109432 /* Settings.bundle in Resources */,
 				90DE3FE01D7C493900A988F6 /* LaunchScreen.storyboard in Resources */,
+				90C2BD061D8E8C4900F4CD37 /* GoogleService-Info.plist in Resources */,
 				90DE3FDD1D7C493900A988F6 /* Assets.xcassets in Resources */,
 				90DE3FDB1D7C493900A988F6 /* Main.storyboard in Resources */,
 			);
@@ -289,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -334,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
