@@ -138,6 +138,8 @@ class FrontPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let storyCell = cell as? StoryTableViewCell {
+            storyCell.layer.transform = CATransform3DMakeScale(0.2, 0.2, 1)
+            
             UIView.animate(
                 withDuration: 0.4,
                 delay: 0,
