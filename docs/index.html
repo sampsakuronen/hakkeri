@@ -26,19 +26,48 @@
   <meta name="twitter:app:id:ipad" content="1115084104">
 
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
       font-family: "San Francisco", "Helvetica Neue", Helvetica, Arial;
-      padding: 1em;
-      max-width: 800px;
-      margin: 0 auto;
+      background: #D2D2D2;
     }
     iframe {
       display: block;
+      margin: 2em auto;
+      border: 1px solid #D2D2D2;
+    }
+
+    #container {
+      margin: 1em auto 0 auto;
+      padding: 1em;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 1em;
+      box-shadow: 0.3em 0.3em 0 #ccc;
+    }
+
+    header {
+      width: 70%;
       margin: 0 auto;
     }
-    @media screen and (max-width: 374px) {
+
+    @media screen and (max-width: 375px) {
+      html, body {
+        background: #fff;
+      }
+      h1 {
+        display: none;
+      }
+      #container {
+        margin: 0;
+        padding: 0;
+        box-shadow: 0;
+        border-radius: 0;
+      }
       iframe {
         height: 300px;
+        margin: 0;
         width: 100%;
       }
     }
@@ -46,11 +75,13 @@
 </head>
 
 <body>
-  <h1>Hakkeri app - readable Hacker News</h1>
-  <hr>
-  <p>Download the app for iPhone: <a href="https://itunes.apple.com/app/hakkeri-readable-hacker-news/id1115084104?mt=8" title="Download Hakkeri app for iPhone"><strong>Hakkeri for iOS</strong></a>.</p>
-  <p>Source code is available at <a href="https://github.com/sampsakuronen/hakkeri">Github / sampsakuronen / hakkeri</a></p>
-  <br><br>
-  <iframe src="https://www.youtube.com/embed/TdhkOzYTOaY?autoplay=1&controls=0&iv_load_policy=3&rel=0&showinfo=0" frameborder="0" allowfullscreen height="667" width="374"></iframe>
+  <div id="container">
+    <header>
+      <h1>Hakkeri for iOS - readable Hacker News</h1>
+      <p><a href="https://itunes.apple.com/app/hakkeri-readable-hacker-news/id1115084104?mt=8" title="Download Hakkeri app for iPhone"><strong>Download the Hakkeri app for iOS</strong></a>.</p>
+      <p><a href="https://github.com/sampsakuronen/hakkeri">Github</a></p>
+    </header>
+    <iframe src="https://www.youtube.com/embed/TdhkOzYTOaY?autoplay=1&controls=0&iv_load_policy=3&rel=0&showinfo=0" frameborder="0" allowfullscreen height="667" width="374"></iframe>
+  </div>
 </body>
 </html>
