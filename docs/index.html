@@ -26,62 +26,61 @@
   <meta name="twitter:app:id:ipad" content="1115084104">
 
   <style>
-    html, body {
+    * {
+      box-sizing: border-box;
+    }
+    body {
       margin: 0;
       padding: 0;
       font-family: "San Francisco", "Helvetica Neue", Helvetica, Arial;
-      background: #D2D2D2;
+      background-color: #D2D2D2;
     }
     iframe {
-      display: block;
-      margin: 2em auto;
       border: 1px solid #D2D2D2;
     }
-
-    #container {
-      margin: 1em auto 0 auto;
+    a {
+      color: white;
+    }
+    #app-icon, #iphone, #links {
+      margin: 1em;
+      float: left;
+    }
+    #app-icon a {
+      text-decoration: none;
+    }
+    #app-icon small {
+      text-align: center;
+      display: block;
+      margin-top: -2em;
+      font-size: 1.5em;
+    }
+    #iphone {
+      background: url('iphone-6.png') no-repeat;
+      background-size: contain;
+      height: 878px;
+      width: 497px;
+      padding: 106px 28px;
+    }
+    #links {
       padding: 1em;
-      max-width: 800px;
-      background: #fff;
-      border-radius: 1em;
-      box-shadow: 0.3em 0.3em 0 #ccc;
-    }
-
-    header {
-      width: 70%;
-      margin: 0 auto;
-    }
-
-    @media screen and (max-width: 375px) {
-      html, body {
-        background: #fff;
-      }
-      h1 {
-        display: none;
-      }
-      #container {
-        margin: 0;
-        padding: 0;
-        box-shadow: 0;
-        border-radius: 0;
-      }
-      iframe {
-        height: 300px;
-        margin: 0;
-        width: 100%;
-      }
+      width: 100%;
     }
   </style>
 </head>
 
 <body>
   <div id="container">
-    <header>
-      <h1>Hakkeri for iOS - readable Hacker News</h1>
-      <p><a href="https://itunes.apple.com/app/hakkeri-readable-hacker-news/id1115084104?mt=8" title="Download Hakkeri app for iPhone"><strong>Download the Hakkeri app for iOS</strong></a>.</p>
+    <div id="app-icon">
+      <p><a href="https://itunes.apple.com/app/hakkeri-readable-hacker-news/id1115084104?mt=8" title="Download Hakkeri app for iPhone"><img src="hakkeri.png"><small>Hakkeri</small></a></p>
+    </div>
+    <div id="iphone">
+      <iframe src="https://www.youtube.com/embed/TdhkOzYTOaY?autoplay=1&controls=0&iv_load_policy=3&rel=0&showinfo=0" frameborder="0" allowfullscreen height="665" width="374"></iframe>
+    </div>
+    <div id="links">
+      <a href="https://itunes.apple.com/app/hakkeri-readable-hacker-news/id1115084104?mt=8" title="Download Hakkeri app for iPhone">Download for iOS</a>
       <p><a href="https://github.com/sampsakuronen/hakkeri">Github</a></p>
-    </header>
-    <iframe src="https://www.youtube.com/embed/TdhkOzYTOaY?autoplay=1&controls=0&iv_load_policy=3&rel=0&showinfo=0" frameborder="0" allowfullscreen height="667" width="374"></iframe>
+    </div>
+
   </div>
 </body>
 </html>
