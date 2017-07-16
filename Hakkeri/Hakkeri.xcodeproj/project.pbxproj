@@ -7,86 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E414F1CA01210AA64DF332A /* Pods_Hakkeri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */; };
-		9098C5881D919E7C00107E43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9098C5871D919E7C00107E43 /* GoogleService-Info.plist */; };
-		90C9598E1D8C921200109432 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90C9598D1D8C921200109432 /* Settings.bundle */; };
-		90DE3FD61D7C493900A988F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE3FD51D7C493900A988F6 /* AppDelegate.swift */; };
-		90DE3FDD1D7C493900A988F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90DE3FDC1D7C493900A988F6 /* Assets.xcassets */; };
-		90DE3FE01D7C493900A988F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DE3FDE1D7C493900A988F6 /* LaunchScreen.storyboard */; };
-		90DE3FE81D7C4A5400A988F6 /* StoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DE3FE71D7C4A5400A988F6 /* StoryTableViewController.swift */; };
+		A69D3C791F1B634100D95441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D3C781F1B634100D95441 /* AppDelegate.swift */; };
+		A69D3C7B1F1B634100D95441 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D3C7A1F1B634100D95441 /* ViewController.swift */; };
+		A69D3C7E1F1B634100D95441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69D3C7C1F1B634100D95441 /* Main.storyboard */; };
+		A69D3C801F1B634100D95441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69D3C7F1F1B634100D95441 /* Assets.xcassets */; };
+		A69D3C831F1B634100D95441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69D3C811F1B634100D95441 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hakkeri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B851EB2C09D68F79A5E68ED /* Pods-Hakkeri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.release.xcconfig"; sourceTree = "<group>"; };
-		9098C5871D919E7C00107E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		90C9598D1D8C921200109432 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		90DE3FD21D7C493900A988F6 /* Hakkeri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hakkeri.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		90DE3FD51D7C493900A988F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90DE3FDC1D7C493900A988F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		90DE3FDF1D7C493900A988F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		90DE3FE11D7C493900A988F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90DE3FE71D7C4A5400A988F6 /* StoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewController.swift; sourceTree = "<group>"; };
-		FE2B5232A052BE693B545A93 /* Pods-Hakkeri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.debug.xcconfig"; sourceTree = "<group>"; };
+		A69D3C751F1B634100D95441 /* Hakkeri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hakkeri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69D3C781F1B634100D95441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A69D3C7A1F1B634100D95441 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A69D3C7D1F1B634100D95441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A69D3C7F1F1B634100D95441 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A69D3C821F1B634100D95441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A69D3C841F1B634100D95441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		90DE3FCF1D7C493900A988F6 /* Frameworks */ = {
+		A69D3C721F1B634100D95441 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E414F1CA01210AA64DF332A /* Pods_Hakkeri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33602654EE83C15C04D2C40F /* Pods */ = {
+		A69D3C6C1F1B634100D95441 = {
 			isa = PBXGroup;
 			children = (
-				FE2B5232A052BE693B545A93 /* Pods-Hakkeri.debug.xcconfig */,
-				7B851EB2C09D68F79A5E68ED /* Pods-Hakkeri.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		8E7C7E3C6BF2BF8AED7190FF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3925F111B248E397C30A0F58 /* Pods_Hakkeri.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		90DE3FC91D7C493900A988F6 = {
-			isa = PBXGroup;
-			children = (
-				90DE3FD41D7C493900A988F6 /* Hakkeri */,
-				90DE3FD31D7C493900A988F6 /* Products */,
-				33602654EE83C15C04D2C40F /* Pods */,
-				8E7C7E3C6BF2BF8AED7190FF /* Frameworks */,
+				A69D3C771F1B634100D95441 /* Hakkeri */,
+				A69D3C761F1B634100D95441 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		90DE3FD31D7C493900A988F6 /* Products */ = {
+		A69D3C761F1B634100D95441 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				90DE3FD21D7C493900A988F6 /* Hakkeri.app */,
+				A69D3C751F1B634100D95441 /* Hakkeri.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90DE3FD41D7C493900A988F6 /* Hakkeri */ = {
+		A69D3C771F1B634100D95441 /* Hakkeri */ = {
 			isa = PBXGroup;
 			children = (
-				90DE3FD51D7C493900A988F6 /* AppDelegate.swift */,
-				90DE3FE71D7C4A5400A988F6 /* StoryTableViewController.swift */,
-				9098C5871D919E7C00107E43 /* GoogleService-Info.plist */,
-				90DE3FDC1D7C493900A988F6 /* Assets.xcassets */,
-				90DE3FDE1D7C493900A988F6 /* LaunchScreen.storyboard */,
-				90DE3FE11D7C493900A988F6 /* Info.plist */,
-				90C9598D1D8C921200109432 /* Settings.bundle */,
+				A69D3C781F1B634100D95441 /* AppDelegate.swift */,
+				A69D3C7A1F1B634100D95441 /* ViewController.swift */,
+				A69D3C7C1F1B634100D95441 /* Main.storyboard */,
+				A69D3C7F1F1B634100D95441 /* Assets.xcassets */,
+				A69D3C811F1B634100D95441 /* LaunchScreen.storyboard */,
+				A69D3C841F1B634100D95441 /* Info.plist */,
 			);
 			path = Hakkeri;
 			sourceTree = "<group>";
@@ -94,16 +67,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		90DE3FD11D7C493900A988F6 /* Hakkeri */ = {
+		A69D3C741F1B634100D95441 /* Hakkeri */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90DE3FE41D7C493900A988F6 /* Build configuration list for PBXNativeTarget "Hakkeri" */;
+			buildConfigurationList = A69D3C871F1B634100D95441 /* Build configuration list for PBXNativeTarget "Hakkeri" */;
 			buildPhases = (
-				F85F86F90092EC1EBDEA254C /* [CP] Check Pods Manifest.lock */,
-				90DE3FCE1D7C493900A988F6 /* Sources */,
-				90DE3FCF1D7C493900A988F6 /* Frameworks */,
-				90DE3FD01D7C493900A988F6 /* Resources */,
-				0BC266E830B38D167C9E0EA4 /* [CP] Embed Pods Frameworks */,
-				C3236404B20C871E89388B9E /* [CP] Copy Pods Resources */,
+				A69D3C711F1B634100D95441 /* Sources */,
+				A69D3C721F1B634100D95441 /* Frameworks */,
+				A69D3C731F1B634100D95441 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -111,28 +81,27 @@
 			);
 			name = Hakkeri;
 			productName = Hakkeri;
-			productReference = 90DE3FD21D7C493900A988F6 /* Hakkeri.app */;
+			productReference = A69D3C751F1B634100D95441 /* Hakkeri.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		90DE3FCA1D7C493900A988F6 /* Project object */ = {
+		A69D3C6D1F1B634100D95441 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Sampsa Kuronen";
 				TargetAttributes = {
-					90DE3FD11D7C493900A988F6 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8U54MT3S65;
-						LastSwiftMigration = 0800;
+					A69D3C741F1B634100D95441 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5CZ7Q4R8DH;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 90DE3FCD1D7C493900A988F6 /* Build configuration list for PBXProject "Hakkeri" */;
+			buildConfigurationList = A69D3C701F1B634100D95441 /* Build configuration list for PBXProject "Hakkeri" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -140,95 +109,54 @@
 				en,
 				Base,
 			);
-			mainGroup = 90DE3FC91D7C493900A988F6;
-			productRefGroup = 90DE3FD31D7C493900A988F6 /* Products */;
+			mainGroup = A69D3C6C1F1B634100D95441;
+			productRefGroup = A69D3C761F1B634100D95441 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				90DE3FD11D7C493900A988F6 /* Hakkeri */,
+				A69D3C741F1B634100D95441 /* Hakkeri */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		90DE3FD01D7C493900A988F6 /* Resources */ = {
+		A69D3C731F1B634100D95441 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C9598E1D8C921200109432 /* Settings.bundle in Resources */,
-				90DE3FE01D7C493900A988F6 /* LaunchScreen.storyboard in Resources */,
-				90DE3FDD1D7C493900A988F6 /* Assets.xcassets in Resources */,
-				9098C5881D919E7C00107E43 /* GoogleService-Info.plist in Resources */,
+				A69D3C831F1B634100D95441 /* LaunchScreen.storyboard in Resources */,
+				A69D3C801F1B634100D95441 /* Assets.xcassets in Resources */,
+				A69D3C7E1F1B634100D95441 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0BC266E830B38D167C9E0EA4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3236404B20C871E89388B9E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F85F86F90092EC1EBDEA254C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		90DE3FCE1D7C493900A988F6 /* Sources */ = {
+		A69D3C711F1B634100D95441 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90DE3FE81D7C4A5400A988F6 /* StoryTableViewController.swift in Sources */,
-				90DE3FD61D7C493900A988F6 /* AppDelegate.swift in Sources */,
+				A69D3C7B1F1B634100D95441 /* ViewController.swift in Sources */,
+				A69D3C791F1B634100D95441 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		90DE3FDE1D7C493900A988F6 /* LaunchScreen.storyboard */ = {
+		A69D3C7C1F1B634100D95441 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				90DE3FDF1D7C493900A988F6 /* Base */,
+				A69D3C7D1F1B634100D95441 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A69D3C811F1B634100D95441 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A69D3C821F1B634100D95441 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -236,11 +164,12 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		90DE3FE21D7C493900A988F6 /* Debug */ = {
+		A69D3C851F1B634100D95441 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -255,7 +184,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -277,7 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -287,11 +215,12 @@
 			};
 			name = Debug;
 		};
-		90DE3FE31D7C493900A988F6 /* Release */ = {
+		A69D3C861F1B634100D95441 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -306,7 +235,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -322,7 +250,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -331,35 +259,27 @@
 			};
 			name = Release;
 		};
-		90DE3FE51D7C493900A988F6 /* Debug */ = {
+		A69D3C881F1B634100D95441 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE2B5232A052BE693B545A93 /* Pods-Hakkeri.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8U54MT3S65;
+				DEVELOPMENT_TEAM = 5CZ7Q4R8DH;
 				INFOPLIST_FILE = Hakkeri/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri.Hakkeri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		90DE3FE61D7C493900A988F6 /* Release */ = {
+		A69D3C891F1B634100D95441 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B851EB2C09D68F79A5E68ED /* Pods-Hakkeri.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8U54MT3S65;
+				DEVELOPMENT_TEAM = 5CZ7Q4R8DH;
 				INFOPLIST_FILE = Hakkeri/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri.Hakkeri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -368,25 +288,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90DE3FCD1D7C493900A988F6 /* Build configuration list for PBXProject "Hakkeri" */ = {
+		A69D3C701F1B634100D95441 /* Build configuration list for PBXProject "Hakkeri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90DE3FE21D7C493900A988F6 /* Debug */,
-				90DE3FE31D7C493900A988F6 /* Release */,
+				A69D3C851F1B634100D95441 /* Debug */,
+				A69D3C861F1B634100D95441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90DE3FE41D7C493900A988F6 /* Build configuration list for PBXNativeTarget "Hakkeri" */ = {
+		A69D3C871F1B634100D95441 /* Build configuration list for PBXNativeTarget "Hakkeri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90DE3FE51D7C493900A988F6 /* Debug */,
-				90DE3FE61D7C493900A988F6 /* Release */,
+				A69D3C881F1B634100D95441 /* Debug */,
+				A69D3C891F1B634100D95441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 90DE3FCA1D7C493900A988F6 /* Project object */;
+	rootObject = A69D3C6D1F1B634100D95441 /* Project object */;
 }
