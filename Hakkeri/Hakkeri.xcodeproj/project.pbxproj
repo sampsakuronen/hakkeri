@@ -361,7 +361,7 @@
 				DEVELOPMENT_TEAM = 5CZ7Q4R8DH;
 				INFOPLIST_FILE = Hakkeri/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri.Hakkeri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -376,7 +376,7 @@
 				DEVELOPMENT_TEAM = 5CZ7Q4R8DH;
 				INFOPLIST_FILE = Hakkeri/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri.Hakkeri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sampsakuronen.hakkeri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
