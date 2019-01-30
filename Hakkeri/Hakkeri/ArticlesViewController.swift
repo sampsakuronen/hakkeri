@@ -6,14 +6,20 @@ class ItemTableViewCell: UITableViewCell {
     let domainLabel = UILabel()
     let titleLabel = UILabel()
     let border = UIView()
-    let bgColorView = UIView()
     
     let horizontalMargin: CGFloat = 15
 
     var item: Item? {
         didSet {
-            domainLabel.text = item?.url.host
-            titleLabel.text = item?.title
+            self.titleLabel.alpha = 0
+            self.domainLabel.alpha = 0
+
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
+                self.domainLabel.text = self.item?.url.host
+                self.titleLabel.text = self.item?.title
+                self.titleLabel.alpha = 1
+                self.domainLabel.alpha = 1
+            }, completion: nil)
         }
     }
     
@@ -47,35 +53,39 @@ class ItemTableViewCell: UITableViewCell {
         domainLabel.textColor = UIColor.black.withAlphaComponent(0.4)
         
         border.backgroundColor = UIColor.black.withAlphaComponent(0.05)
-        
-        bgColorView.backgroundColor = UIColor.white.withAlphaComponent(0.03)
+
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.black.withAlphaComponent(0.03)
         self.selectedBackgroundView = bgColorView
     }
     
     override func prepareForReuse() {
         domainLabel.text = ""
-        titleLabel.text = ""
-    }
+        titleLabel.text = ""    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 class ArticlesViewController: UITableViewController {
     init() {
-        super.init(style: .grouped)
+        super.init(style: .plain)
 
         navigationController?.isNavigationBarHidden = true
+        tableView.separatorStyle = .none
 
+        refreshAll()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshAll), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    @objc func refreshAll() {
         HackerNewsAPI.shared.update { [weak self] in
             DispatchQueue.main.sync {
                 self?.tableView.reloadData()
             }
         }
     }
-    
     
     func showInSafari(url: URL) {
         let svc = SFSafariViewController(url: url.absoluteURL, entersReaderIfAvailable: true)
@@ -88,6 +98,10 @@ class ArticlesViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,18 +123,30 @@ class ArticlesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? ItemTableViewCell,
+            let item = cell.item else {
+                return
+        }
+
+        showInSafari(url: item.url)
+    }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let cell = tableView.cellForRow(at: indexPath) as! ItemTableViewCell
         
         let showThread = UITableViewRowAction(style: .normal, title: "Comments") { (action, index) in
-            if let url = cell.item?.url {
-                self.showInSafari(url: url)
+            if let item = cell.item {
+                self.showInSafari(url: item.threadUrl)
             }
         }
         
         let share = UITableViewRowAction(style: .normal, title: "Share") { (action, index) in
-            let activityViewController = UIActivityViewController(activityItems: ["\(cell.item?.url.absoluteString ?? "") from Hacker News"], applicationActivities: nil)
+            guard let item = cell.item else {
+                return
+            }
+            let activityViewController = UIActivityViewController(activityItems: ["\(item.title) - \(item.url.absoluteString) via Hacker News"], applicationActivities: nil)
             self.present(activityViewController, animated: true, completion: {
                 self.tableView.setEditing(false, animated: true)
             })
@@ -131,7 +157,6 @@ class ArticlesViewController: UITableViewController {
         
         return [showThread, share]
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

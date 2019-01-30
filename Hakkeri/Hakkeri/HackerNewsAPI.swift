@@ -13,6 +13,7 @@ struct Item {
     let id: Int
     let type: ItemType
     let url: URL
+    let threadUrl: URL
     let title: String
 
     init?(json: [String: Any]) {
@@ -26,6 +27,7 @@ struct Item {
         
         self.id = id
         self.url = url
+        self.threadUrl = URL(string: "https://news.ycombinator.com/item?id=\(id)")!
         self.title = title
         self.type = ItemType(rawValue: type) ?? .unknown
     }
