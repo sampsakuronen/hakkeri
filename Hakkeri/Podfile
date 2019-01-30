@@ -1,0 +1,13 @@
+ENV["COCOAPODS_DISABLE_STATS"] = "true"
+
+target 'Hakkeri' do
+  use_frameworks!
+  inhibit_all_warnings!
+
+  pod 'Firebase/Core'
+end
+
+post_install do | installer |
+  require 'fileutils'
+  FileUtils.cp_r('Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri-acknowledgements.plist', 'Hakkeri/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+end

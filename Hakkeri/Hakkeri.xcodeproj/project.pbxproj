@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0253F15479B926F7B2FF2B3B /* Pods_Hakkeri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2077FFEC4E891EE6601CCFAC /* Pods_Hakkeri.framework */; };
+		A655BAC72202036F000B02D9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A655BAC62202036F000B02D9 /* Settings.bundle */; };
+		A655BAC9220203CF000B02D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A655BAC8220203CF000B02D9 /* GoogleService-Info.plist */; };
 		A69D3C791F1B634100D95441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D3C781F1B634100D95441 /* AppDelegate.swift */; };
 		A69D3C801F1B634100D95441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69D3C7F1F1B634100D95441 /* Assets.xcassets */; };
 		A69D3C831F1B634100D95441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69D3C811F1B634100D95441 /* LaunchScreen.storyboard */; };
@@ -15,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2077FFEC4E891EE6601CCFAC /* Pods_Hakkeri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hakkeri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B261276A36821BC47EAB26 /* Pods-Hakkeri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.debug.xcconfig"; sourceTree = "<group>"; };
+		A655BAC62202036F000B02D9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A655BAC8220203CF000B02D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A69D3C751F1B634100D95441 /* Hakkeri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hakkeri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69D3C781F1B634100D95441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A69D3C7F1F1B634100D95441 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -22,6 +29,7 @@
 		A69D3C841F1B634100D95441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A69D3C8A1F1B656100D95441 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		A69D3C8C1F1B9CFB00D95441 /* HackerNewsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerNewsAPI.swift; sourceTree = "<group>"; };
+		B9DAAC3DB2197C31E001B76A /* Pods-Hakkeri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0253F15479B926F7B2FF2B3B /* Pods_Hakkeri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				A69D3C771F1B634100D95441 /* Hakkeri */,
 				A69D3C761F1B634100D95441 /* Products */,
+				BB7FA907E2A11A12CCC8B5E7 /* Pods */,
+				AA09ACD5AF413E35EB37EFCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,9 +70,28 @@
 				A69D3C8C1F1B9CFB00D95441 /* HackerNewsAPI.swift */,
 				A69D3C7F1F1B634100D95441 /* Assets.xcassets */,
 				A69D3C811F1B634100D95441 /* LaunchScreen.storyboard */,
+				A655BAC8220203CF000B02D9 /* GoogleService-Info.plist */,
 				A69D3C841F1B634100D95441 /* Info.plist */,
+				A655BAC62202036F000B02D9 /* Settings.bundle */,
 			);
 			path = Hakkeri;
+			sourceTree = "<group>";
+		};
+		AA09ACD5AF413E35EB37EFCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2077FFEC4E891EE6601CCFAC /* Pods_Hakkeri.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB7FA907E2A11A12CCC8B5E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46B261276A36821BC47EAB26 /* Pods-Hakkeri.debug.xcconfig */,
+				B9DAAC3DB2197C31E001B76A /* Pods-Hakkeri.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A69D3C871F1B634100D95441 /* Build configuration list for PBXNativeTarget "Hakkeri" */;
 			buildPhases = (
+				C02381285A78C7C1D372FA0A /* [CP] Check Pods Manifest.lock */,
 				A69D3C711F1B634100D95441 /* Sources */,
 				A69D3C721F1B634100D95441 /* Frameworks */,
 				A69D3C731F1B634100D95441 /* Resources */,
+				0D91291CBC2A797450C2DAF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,11 +158,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69D3C831F1B634100D95441 /* LaunchScreen.storyboard in Resources */,
+				A655BAC9220203CF000B02D9 /* GoogleService-Info.plist in Resources */,
+				A655BAC72202036F000B02D9 /* Settings.bundle in Resources */,
 				A69D3C801F1B634100D95441 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D91291CBC2A797450C2DAF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C02381285A78C7C1D372FA0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hakkeri-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A69D3C711F1B634100D95441 /* Sources */ = {
@@ -272,6 +355,7 @@
 		};
 		A69D3C881F1B634100D95441 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46B261276A36821BC47EAB26 /* Pods-Hakkeri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5CZ7Q4R8DH;
@@ -286,6 +370,7 @@
 		};
 		A69D3C891F1B634100D95441 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DAAC3DB2197C31E001B76A /* Pods-Hakkeri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5CZ7Q4R8DH;
