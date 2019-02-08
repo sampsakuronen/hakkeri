@@ -7,14 +7,14 @@ class ItemTableViewCell: UITableViewCell {
     let titleLabel = UILabel()
     let border = UIView()
     
-    let horizontalMargin: CGFloat = 15
+    let horizontalMargin: CGFloat = 18
 
     var item: Item? {
         didSet {
             self.titleLabel.alpha = 0
             self.domainLabel.alpha = 0
 
-            UIView.animate(withDuration: 0.2, delay: 0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
                 self.domainLabel.text = self.item?.url.host
                 self.titleLabel.text = self.item?.title
                 self.titleLabel.alpha = 1
@@ -31,8 +31,14 @@ class ItemTableViewCell: UITableViewCell {
         addSubview(border)
         
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 25).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -horizontalMargin).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: horizontalMargin).isActive = true
+
+        if #available(iOS 11.0, *) {
+            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -horizontalMargin).isActive = true
+            titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: horizontalMargin).isActive = true
+        } else {
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -horizontalMargin).isActive = true
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: horizontalMargin).isActive = true
+        }
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         domainLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
@@ -69,11 +75,26 @@ class ItemTableViewCell: UITableViewCell {
 }
 
 class ArticlesViewController: UITableViewController {
+    let loadingIndicator = UIActivityIndicatorView(style: .gray)
+
     init() {
         super.init(style: .plain)
 
         navigationController?.isNavigationBarHidden = true
         tableView.separatorStyle = .none
+
+        view.addSubview(loadingIndicator)
+        loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loadingIndicator.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
+
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshAll), for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.black.withAlphaComponent(0.4)
+        tableView.refreshControl = refreshControl
 
         refreshAll()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshAll), name: UIApplication.didBecomeActiveNotification, object: nil)
@@ -81,8 +102,18 @@ class ArticlesViewController: UITableViewController {
 
     @objc func refreshAll() {
         HackerNewsAPI.shared.update { [weak self] in
+            guard let s = self, let refreshControl = s.refreshControl else { return }
             DispatchQueue.main.sync {
-                self?.tableView.reloadData()
+                UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+                    s.tableView.alpha = 0
+                    s.loadingIndicator.stopAnimating()
+                    refreshControl.endRefreshing()
+                    }, completion: { _ in
+                        s.tableView.reloadData()
+                        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+                            s.tableView.alpha = 1
+                            }, completion: nil)
+                })
             }
         }
     }
