@@ -146,6 +146,10 @@ class ArticlesViewController: UITableViewController {
         return UIView()
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return HackerNewsAPI.shared.topStoryIds.count
     }
