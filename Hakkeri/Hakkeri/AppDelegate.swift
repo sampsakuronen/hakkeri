@@ -6,6 +6,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func setDefaultSettings() {
+        let appDefaults = [
+            "reader_mode": true
+        ]
+        UserDefaults.standard.register(defaults: appDefaults)
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let articlesViewController = ArticlesViewController()
@@ -15,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         self.window?.backgroundColor = .white
 
+        setDefaultSettings()
         FirebaseApp.configure()
         
         return true

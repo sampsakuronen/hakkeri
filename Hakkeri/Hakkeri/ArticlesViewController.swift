@@ -30,7 +30,7 @@ class ItemTableViewCell: UITableViewCell {
         addSubview(titleLabel)
         addSubview(border)
         
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 25).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 23).isActive = true
 
         if #available(iOS 11.0, *) {
             titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -horizontalMargin).isActive = true
@@ -117,9 +117,14 @@ class ArticlesViewController: UITableViewController {
             }
         }
     }
+
+    func doesUserWantReaderMode() -> Bool {
+        return UserDefaults.standard.bool(forKey: "reader_mode")
+    }
     
     func showInSafari(url: URL) {
-        let svc = SFSafariViewController(url: url.absoluteURL, entersReaderIfAvailable: true)
+        let userWantsReaderMode = doesUserWantReaderMode()
+        let svc = SFSafariViewController(url: url.absoluteURL, entersReaderIfAvailable: userWantsReaderMode)
         self.present(svc, animated: true, completion: nil)
     }
     
