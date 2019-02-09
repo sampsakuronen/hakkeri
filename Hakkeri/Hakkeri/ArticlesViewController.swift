@@ -100,6 +100,11 @@ class ArticlesViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(refreshAll), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
+    func scrollToFirstRow() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+
     @objc func refreshAll() {
         HackerNewsAPI.shared.update { [weak self] in
             guard let s = self, let refreshControl = s.refreshControl else { return }
@@ -111,6 +116,7 @@ class ArticlesViewController: UITableViewController {
                     }, completion: { _ in
                         s.tableView.reloadData()
                         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+                            s.scrollToFirstRow()
                             s.tableView.alpha = 1
                             }, completion: nil)
                 })
