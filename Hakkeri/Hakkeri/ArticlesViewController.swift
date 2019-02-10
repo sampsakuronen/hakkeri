@@ -89,6 +89,14 @@ class ItemTableViewCell: UITableViewCell {
 class ArticlesViewController: UITableViewController {
     let loadingIndicator = UIActivityIndicatorView(style: .gray)
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if UserSettings.darkMode() {
+            return UIStatusBarStyle.lightContent
+        } else {
+            return UIStatusBarStyle.default
+        }
+    }
+
     init() {
         super.init(style: .plain)
 
