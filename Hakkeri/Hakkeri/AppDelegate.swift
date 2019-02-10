@@ -9,7 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setDefaultSettings() {
         let appDefaults = [
             "reader_mode": true,
-            "dark_mode": false
+            "dark_mode": false,
+            "dank_mode": false
         ]
         UserDefaults.standard.register(defaults: appDefaults)
     }

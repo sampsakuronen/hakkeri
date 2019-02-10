@@ -14,15 +14,24 @@ class ItemTableViewCell: UITableViewCell {
             self.titleLabel.alpha = 0
             self.domainLabel.alpha = 0
 
+            let title = UserSettings.dankMode() ? self.item?.title.components(separatedBy: " ").joined(separator: " \(self.randomEmoji()) ") : self.item?.title
+
             UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction, .curveEaseInOut], animations: {
                 self.domainLabel.text = self.item?.url.host
-                self.titleLabel.text = self.item?.title
+                self.titleLabel.text = title
                 self.titleLabel.alpha = 1
                 self.domainLabel.alpha = 1
             }, completion: nil)
         }
     }
-    
+
+    func randomEmoji() -> String {
+        let range = [UInt32](0x1F601...0x1F64F)
+        let ascii = range[Int(drand48() * (Double(range.count)))]
+        let emoji = UnicodeScalar(ascii)?.description
+        return emoji!
+    }
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 

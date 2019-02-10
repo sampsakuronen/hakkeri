@@ -36,6 +36,16 @@
             <key>Type</key>
             <string>PSToggleSwitchSpecifier</string>
             <key>Title</key>
+            <string>Dank mode</string>
+            <key>Key</key>
+            <string>dank_mode</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
             <string>Dark mode</string>
             <key>Key</key>
             <string>dark_mode</string>

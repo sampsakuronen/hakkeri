@@ -8,4 +8,8 @@ class UserSettings {
     static func darkMode() -> Bool {
         return UserDefaults.standard.bool(forKey: "dark_mode")
     }
+
+    static func dankMode() -> Bool {
+        return UserDefaults.standard.bool(forKey: "dank_mode")
+    }
 }
