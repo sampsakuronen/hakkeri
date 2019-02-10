@@ -25,6 +25,8 @@ class ItemTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        backgroundColor = Colors.current.background
         
         addSubview(domainLabel)
         addSubview(titleLabel)
@@ -54,15 +56,16 @@ class ItemTableViewCell: UITableViewCell {
         
         titleLabel.numberOfLines = 2
         titleLabel.font = UIFont.systemFont(ofSize: 18)
+        titleLabel.textColor = Colors.current.textPrimary
         
         domainLabel.font = UIFont.systemFont(ofSize: 14)
-        domainLabel.textColor = UIColor.black.withAlphaComponent(0.4)
+        domainLabel.textColor = Colors.current.textSecondary
         
-        border.backgroundColor = UIColor.black.withAlphaComponent(0.05)
+        border.backgroundColor = Colors.current.border
 
-        let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor.black.withAlphaComponent(0.03)
-        self.selectedBackgroundView = bgColorView
+        let selectedStateView = UIView()
+        selectedStateView.backgroundColor = Colors.current.selectionHighlight
+        self.selectedBackgroundView = selectedStateView
     }
     
     override func prepareForReuse() {
@@ -80,6 +83,8 @@ class ArticlesViewController: UITableViewController {
     init() {
         super.init(style: .plain)
 
+        view.backgroundColor = Colors.current.background
+
         navigationController?.isNavigationBarHidden = true
         tableView.separatorStyle = .none
 
@@ -93,10 +98,9 @@ class ArticlesViewController: UITableViewController {
 
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshAll), for: UIControl.Event.valueChanged)
-        refreshControl.tintColor = UIColor.black.withAlphaComponent(0.4)
+        refreshControl.tintColor = Colors.current.refreshControl
         tableView.refreshControl = refreshControl
 
-        refreshAll()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshAll), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
 
@@ -111,25 +115,22 @@ class ArticlesViewController: UITableViewController {
             DispatchQueue.main.sync {
                 UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
                     s.tableView.alpha = 0
-                    s.loadingIndicator.stopAnimating()
+                    s.loadingIndicator.alpha = 0
                     refreshControl.endRefreshing()
                     }, completion: { _ in
                         s.tableView.reloadData()
                         UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
                             s.scrollToFirstRow()
+                            s.loadingIndicator.stopAnimating()
                             s.tableView.alpha = 1
                             }, completion: nil)
                 })
             }
         }
     }
-
-    func doesUserWantReaderMode() -> Bool {
-        return UserDefaults.standard.bool(forKey: "reader_mode")
-    }
     
     func showInSafari(url: URL) {
-        let userWantsReaderMode = doesUserWantReaderMode()
+        let userWantsReaderMode = UserSettings.readerMode()
         let svc = SFSafariViewController(url: url.absoluteURL, entersReaderIfAvailable: userWantsReaderMode)
         self.present(svc, animated: true, completion: nil)
     }
@@ -147,7 +148,7 @@ class ArticlesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 30
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -198,8 +199,8 @@ class ArticlesViewController: UITableViewController {
             })
         }
         
-        share.backgroundColor = UIColor.gray
-        showThread.backgroundColor = UIColor.darkGray
+        share.backgroundColor = Colors.current.backgroundSecondary
+        showThread.backgroundColor = Colors.current.backgroundTertiary
         
         return [showThread, share]
     }

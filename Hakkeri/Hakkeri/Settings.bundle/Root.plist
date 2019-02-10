@@ -8,22 +8,40 @@
 	<array>
 		<dict>
 			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>Title</key>
-			<string>Open links in reader mode</string>
-			<key>Key</key>
-			<string>reader_mode</string>
-			<key>DefaultValue</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
 			<string>Acknowledgements</string>
 			<key>File</key>
 			<string>Acknowledgements</string>
 		</dict>
+        <dict>
+            <key>Type</key>
+            <string>PSGroupSpecifier</string>
+            <key>Title</key>
+            <string>Settings</string>
+            <key>FooterText</key>
+            <string>Reboot the app for this to take effect. You can configure Safari to be in dark mode after opening a link inside the app.</string>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Open links in reader mode</string>
+            <key>Key</key>
+            <string>reader_mode</string>
+            <key>DefaultValue</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>Type</key>
+            <string>PSToggleSwitchSpecifier</string>
+            <key>Title</key>
+            <string>Dark mode</string>
+            <key>Key</key>
+            <string>dark_mode</string>
+            <key>DefaultValue</key>
+            <false/>
+        </dict>
 	</array>
 </dict>
 </plist>

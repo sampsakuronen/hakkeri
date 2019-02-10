@@ -15,6 +15,8 @@
 		A69D3C831F1B634100D95441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69D3C811F1B634100D95441 /* LaunchScreen.storyboard */; };
 		A69D3C8B1F1B656100D95441 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D3C8A1F1B656100D95441 /* ArticlesViewController.swift */; };
 		A69D3C8D1F1B9CFB00D95441 /* HackerNewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69D3C8C1F1B9CFB00D95441 /* HackerNewsAPI.swift */; };
+		A6D435A322100B2000F58147 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D435A222100B2000F58147 /* Colors.swift */; };
+		A6D435A52210A96900F58147 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D435A42210A96900F58147 /* UserSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		A69D3C841F1B634100D95441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A69D3C8A1F1B656100D95441 /* ArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		A69D3C8C1F1B9CFB00D95441 /* HackerNewsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackerNewsAPI.swift; sourceTree = "<group>"; };
+		A6D435A222100B2000F58147 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A6D435A42210A96900F58147 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		B9DAAC3DB2197C31E001B76A /* Pods-Hakkeri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakkeri.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hakkeri/Pods-Hakkeri.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +71,8 @@
 			children = (
 				A69D3C781F1B634100D95441 /* AppDelegate.swift */,
 				A69D3C8A1F1B656100D95441 /* ArticlesViewController.swift */,
+				A6D435A42210A96900F58147 /* UserSettings.swift */,
+				A6D435A222100B2000F58147 /* Colors.swift */,
 				A69D3C8C1F1B9CFB00D95441 /* HackerNewsAPI.swift */,
 				A69D3C7F1F1B634100D95441 /* Assets.xcassets */,
 				A69D3C811F1B634100D95441 /* LaunchScreen.storyboard */,
@@ -221,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69D3C791F1B634100D95441 /* AppDelegate.swift in Sources */,
+				A6D435A322100B2000F58147 /* Colors.swift in Sources */,
 				A69D3C8B1F1B656100D95441 /* ArticlesViewController.swift in Sources */,
+				A6D435A52210A96900F58147 /* UserSettings.swift in Sources */,
 				A69D3C8D1F1B9CFB00D95441 /* HackerNewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

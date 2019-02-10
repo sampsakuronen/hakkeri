@@ -8,7 +8,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func setDefaultSettings() {
         let appDefaults = [
-            "reader_mode": true
+            "reader_mode": true,
+            "dark_mode": false
         ]
         UserDefaults.standard.register(defaults: appDefaults)
     }
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = articlesViewController
         self.window?.makeKeyAndVisible()
-        self.window?.backgroundColor = .white
+        self.window?.backgroundColor = Colors.current.background
 
         setDefaultSettings()
         FirebaseApp.configure()
