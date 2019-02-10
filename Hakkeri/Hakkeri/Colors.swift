@@ -27,11 +27,11 @@ class Colors {
     )
 
     private let dark = ColorScheme(
-        background: UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 1),
-        backgroundSecondary: .gray,
-        backgroundTertiary: .darkGray,
+        background: UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1),
+        backgroundSecondary: UIColor.white.withAlphaComponent(0.1),
+        backgroundTertiary: UIColor.white.withAlphaComponent(0.15),
         border: UIColor.white.withAlphaComponent(0.08),
-        selectionHighlight: UIColor.white.withAlphaComponent(0.03),
+        selectionHighlight: UIColor.white.withAlphaComponent(0.04),
         refreshControl: UIColor.white.withAlphaComponent(0.4),
         textPrimary: .white,
         textSecondary: .gray
