@@ -18,16 +18,20 @@ struct Item {
 
     init?(json: [String: Any]) {
         guard let id = json["id"] as? Int,
-        let urlString = json["url"] as? String,
-        let url = URL(string: urlString),
+        let threadUrl = URL(string: "https://news.ycombinator.com/item?id=\(id)"),
         let title = json["title"] as? String,
         let type = json["type"] as? String else {
             return nil
         }
-        
+      
+        if let urlString = json["url"] as? String, let url = URL(string: urlString) {
+          self.url = url
+        } else {
+          self.url = threadUrl
+        }
+      
         self.id = id
-        self.url = url
-        self.threadUrl = URL(string: "https://news.ycombinator.com/item?id=\(id)")!
+        self.threadUrl = threadUrl
         self.title = title
         self.type = ItemType(rawValue: type) ?? .unknown
     }
