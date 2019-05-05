@@ -27,7 +27,7 @@ class Colors {
     )
 
     private let dark = ColorScheme(
-        background: UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1),
+        background: UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1),
         backgroundSecondary: UIColor.white.withAlphaComponent(0.1),
         backgroundTertiary: UIColor.white.withAlphaComponent(0.15),
         border: UIColor.white.withAlphaComponent(0.08),
