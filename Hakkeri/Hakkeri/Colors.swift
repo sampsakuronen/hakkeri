@@ -70,10 +70,18 @@ class Colors {
     }
 
     private func colors() -> ColorScheme {
+        let vc = UIViewController()
+        
         if UserSettings.darkMode() {
             return dark
-        } else {
-            return light
         }
+        
+        if #available(iOS 12.0, *) {
+            if vc.traitCollection.userInterfaceStyle == .dark {
+                return dark
+            }
+        }
+        
+        return light
     }
 }

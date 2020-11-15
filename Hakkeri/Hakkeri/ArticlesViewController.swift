@@ -128,8 +128,9 @@ class ArticlesViewController: UITableViewController {
 
     @objc func refreshAll() {
         HackerNewsAPI.shared.update { [weak self] in
-            guard let s = self, let refreshControl = s.refreshControl else { return }
-            DispatchQueue.main.sync {
+           
+            DispatchQueue.main.async {
+                guard let s = self, let refreshControl = s.refreshControl else { return }
                 UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
                     s.tableView.alpha = 0
                     s.loadingIndicator.alpha = 0
@@ -148,7 +149,13 @@ class ArticlesViewController: UITableViewController {
     
     func showInSafari(url: URL) {
         let userWantsReaderMode = UserSettings.readerMode()
-        let svc = SFSafariViewController(url: url.absoluteURL, entersReaderIfAvailable: userWantsReaderMode)
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = userWantsReaderMode
+        
+        let svc = SFSafariViewController(url: url.absoluteURL, configuration: config)
+        svc.preferredBarTintColor = Colors.current.background
+        svc.preferredControlTintColor = Colors.current.background
+        
         self.present(svc, animated: true, completion: nil)
     }
     
